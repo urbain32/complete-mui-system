@@ -19,8 +19,9 @@ const Header = () => {
     <AppBar position="static" style={{ backgroundColor: "#fff" }}>
       <Toolbar>
         <Grid container alignItems="center">
-          <Grid item>
+          <Grid item sm={4}>
             <InputBase
+              fullWidth
               placeholder="Search topics"
               startAdornment={<Search color="primary" fontSize="small" />}
               sx={{

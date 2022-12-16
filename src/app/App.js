@@ -5,7 +5,14 @@ function App() {
   return (
     <>
       <SideMenu />
-      <div>Here we go</div>
+      <div
+        style={{
+          paddingLeft: "320px",
+          width: "100%",
+        }}
+      >
+        Here we go
+      </div>
     </>
   );
 }

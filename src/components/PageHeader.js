@@ -7,7 +7,7 @@ const Div = styled("div")(({ theme }) => ({
 }));
 const CardIcon = styled(Card)(({ theme }) => ({
   padding: theme.spacing(),
-  display: "flex",
+  display: "inline-block",
   color: "#3c44b1",
 }));
 const PageHeader = (props) => {

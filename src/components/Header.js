@@ -27,8 +27,9 @@ const Header = () => {
                 opacity: "0.6",
                 padding: "0px 8px",
                 fontSize: "0.8rem",
-                gap: "10px",
+                // gap: "10px",
                 ":hover": { backgroundColor: "#f2f2f2", borderRadius: "100px" },
+                ".MuiSvgIcon-root": { marginRight: "8px" },
               }}
             />
           </Grid>

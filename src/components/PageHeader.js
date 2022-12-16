@@ -3,6 +3,7 @@ import React from "react";
 const Div = styled("div")(({ theme }) => ({
   padding: theme.spacing(4),
   display: "flex",
+  alignItems: "center",
   marginBottom: theme.spacing(2), //spacing(1)=8px of 2=16
 }));
 const CardIcon = styled(Card)(({ theme }) => ({

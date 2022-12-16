@@ -18,12 +18,18 @@ const Header = () => {
   return (
     <AppBar position="static" style={{ backgroundColor: "#fff" }}>
       <Toolbar>
-        <Grid container>
+        <Grid container alignItems="center">
           <Grid item>
             <InputBase
               placeholder="Search topics"
-              startAdornment={<Search fontSize="small" />}
-              sx={{ opacity: "0.6", padding: "0px 8px", fontSize: "0.8rem" }}
+              startAdornment={<Search color="primary" fontSize="small" />}
+              sx={{
+                opacity: "0.6",
+                padding: "0px 8px",
+                fontSize: "0.8rem",
+                gap: "10px",
+                ":hover": { backgroundColor: "#f2f2f2", borderRadius: "100px" },
+              }}
             />
           </Grid>
           <Grid item sm></Grid>

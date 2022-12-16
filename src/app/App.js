@@ -35,7 +35,7 @@ function App() {
         <PageHeader
           title="Page Header"
           subtitle="Page description"
-          icon={<PeopleOutlineTwoTone />}
+          icon={<PeopleOutlineTwoTone fontSize="large" />}
         />
       </div>
       <CssBaseline />

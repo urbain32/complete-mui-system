@@ -15,7 +15,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: "#fff" }}>
       <Toolbar>
         <Grid container>
           <Grid item>

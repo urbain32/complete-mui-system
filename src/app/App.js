@@ -3,6 +3,7 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import Header from "../components/Header";
 import PageHeader from "../components/PageHeader";
 import SideMenu from "../components/SideMenu";
+import Employees from "../pages/employees/Employees";
 import "./App.css";
 
 const theme = createTheme({
@@ -37,6 +38,7 @@ function App() {
           subtitle="Page description"
           icon={<PeopleOutlineTwoTone fontSize="large" />}
         />
+        <Employees />
       </div>
       <CssBaseline />
     </ThemeProvider>

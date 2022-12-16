@@ -1,4 +1,4 @@
-import { createTheme, CssBaseline } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
 import "./App.css";
@@ -18,7 +18,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <SideMenu />
       <div
         style={{
@@ -29,7 +29,7 @@ function App() {
         <Header />
       </div>
       <CssBaseline />
-    </>
+    </ThemeProvider>
   );
 }
 

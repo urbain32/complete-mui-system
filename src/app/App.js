@@ -1,7 +1,5 @@
-import { PeopleOutlineTwoTone } from "@mui/icons-material";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import Header from "../components/Header";
-import PageHeader from "../components/PageHeader";
 import SideMenu from "../components/SideMenu";
 import Employees from "../pages/employees/Employees";
 import "./App.css";
@@ -33,11 +31,6 @@ function App() {
         }}
       >
         <Header />
-        <PageHeader
-          title="Page Header"
-          subtitle="Page description"
-          icon={<PeopleOutlineTwoTone fontSize="large" />}
-        />
         <Employees />
       </div>
       <CssBaseline />

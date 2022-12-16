@@ -6,9 +6,16 @@ const Div = styled("div")(({ theme }) => ({
   marginBottom: theme.spacing(2), //spacing(1)=8px of 2=16
 }));
 const CardIcon = styled(Card)(({ theme }) => ({
-  padding: theme.spacing(),
+  padding: theme.spacing(2),
   display: "inline-block",
   color: "#3c44b1",
+}));
+const DivTitle = styled("div")(({ theme }) => ({
+  paddingLeft: theme.spacing(4),
+  ".MuiTypography-subtitle2": {
+    opacity: 0.5,
+    textAlign: "center",
+  },
 }));
 const PageHeader = (props) => {
   const { title, subtitle, icon } = props;
@@ -16,14 +23,14 @@ const PageHeader = (props) => {
     <Paper elevation={0} square sx={{ backgroundColor: "#fdfdff" }}>
       <Div>
         <CardIcon>{icon}</CardIcon>
-        <div>
+        <DivTitle>
           <Typography variant="h6" component="div">
             {title}
           </Typography>
           <Typography variant="subtitle2" component="div">
             {subtitle}
           </Typography>
-        </div>
+        </DivTitle>
       </Div>
     </Paper>
   );

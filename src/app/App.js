@@ -34,7 +34,7 @@ function App() {
         <Header />
         <PageHeader
           title="Page Header"
-          subtitle="Page  description"
+          subtitle="Page description"
           icon={<PeopleOutlineTwoTone />}
         />
       </div>

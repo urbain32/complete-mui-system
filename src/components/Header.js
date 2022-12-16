@@ -16,7 +16,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <AppBar position="static" style={{ backgroundColor: "#fff" }}>
+    <AppBar
+      position="static"
+      style={{ backgroundColor: "#fff", transform: "translateZ(0)" }}
+    >
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item sm={4}>

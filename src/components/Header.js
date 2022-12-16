@@ -2,6 +2,7 @@ import {
   ChatBubbleOutline,
   NotificationsNone,
   PowerSettingsNew,
+  Search,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -19,22 +20,26 @@ const Header = () => {
       <Toolbar>
         <Grid container>
           <Grid item>
-            <InputBase />
+            <InputBase
+              placeholder="Search topics"
+              startAdornment={<Search fontSize="small" />}
+              sx={{ opacity: "0.6", padding: "0px 8px", fontSize: "0.8rem" }}
+            />
           </Grid>
           <Grid item sm></Grid>
           <Grid item>
             <IconButton>
               <Badge badgeContent={4} color="secondary">
-                <NotificationsNone />
+                <NotificationsNone fontSize="small" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge badgeContent={4} color="primary">
-                <ChatBubbleOutline />
+                <ChatBubbleOutline fontSize="small" />
               </Badge>
             </IconButton>
             <IconButton>
-              <PowerSettingsNew />
+              <PowerSettingsNew fontSize="small" />
             </IconButton>
           </Grid>
         </Grid>

@@ -23,7 +23,7 @@ const EmployeesForm = () => {
   console.log("first", values);
   return (
     <Form>
-      <Grid container spacing={4}>
+      <Grid container spacing={8}>
         <Grid item xs={6}>
           <Controls.Input
             label="Full Name"

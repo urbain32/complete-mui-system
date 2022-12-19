@@ -1,4 +1,13 @@
-import { Grid, TextField } from "@mui/material";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  TextField,
+} from "@mui/material";
+import { pink } from "@mui/material/colors";
 import { useForm, Form } from "../../components/useForm";
 const initialValues = {
   id: 0,
@@ -11,15 +20,16 @@ const initialValues = {
   hireDate: new Date(),
   isPermanent: false,
 };
+
 const EmployeesForm = () => {
   const { values, setValues, handleInputChange } = useForm(initialValues);
+  console.log("first", values);
   return (
     <Form>
-      <Grid container sx={{}}>
+      <Grid container spacing={4}>
         <Grid item xs={6}>
           <TextField
             fullWidth
-            sx={{ marginBottom: 2 }}
             variant="outlined"
             label="Full Name"
             name="fullName"
@@ -35,7 +45,32 @@ const EmployeesForm = () => {
             onChange={handleInputChange}
           />
         </Grid>
-        <Grid item xs={6}></Grid>
+        <Grid item xs={6}>
+          <FormControl>
+            <FormLabel>Gender</FormLabel>
+            <RadioGroup
+              row
+              name="gender"
+              value={values.gender}
+              onChange={handleInputChange}
+            >
+              <FormControlLabel value="male" control={<Radio />} label="Male" />
+              <FormControlLabel
+                value="female"
+                control={
+                  <Radio
+                    sx={{
+                      "&.Mui-checked": {
+                        color: pink[600],
+                      },
+                    }}
+                  />
+                }
+                label="Female"
+              />
+            </RadioGroup>
+          </FormControl>
+        </Grid>
       </Grid>
     </Form>
   );

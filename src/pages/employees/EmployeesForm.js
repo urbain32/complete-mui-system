@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { useForm, Form } from "../../components/useForm";
 import Controls from "../../components/controls/Controls";
+import * as employeeService from "../../services/employeeService";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -44,6 +45,13 @@ const EmployeesForm = () => {
             value={values.gender}
             onChange={handleInputChange}
             items={genderItems}
+          />
+          <Controls.Select
+            label="Departement"
+            name="departementId"
+            value={values.departementId}
+            onChange={handleInputChange}
+            options={employeeService.getDepartementCollection()}
           />
         </Grid>
       </Grid>

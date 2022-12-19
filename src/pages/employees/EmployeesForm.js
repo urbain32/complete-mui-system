@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React, { useState } from "react";
 const initialValues = {
   id: 0,
@@ -12,7 +13,14 @@ const initialValues = {
 };
 const EmployeesForm = () => {
   const [values, setValues] = useState(initialValues);
-  return <form></form>;
+  return (
+    <form>
+      <Grid container>
+        <Grid item xs={6}></Grid>
+        <Grid item xs={6}></Grid>
+      </Grid>
+    </form>
+  );
 };
 
 export default EmployeesForm;

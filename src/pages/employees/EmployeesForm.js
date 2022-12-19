@@ -9,6 +9,7 @@ import {
 import { pink } from "@mui/material/colors";
 import { useForm, Form } from "../../components/useForm";
 import Input from "../../components/controls/Input";
+import RadioGroupField from "../../components/controls/RadioGroupField";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -20,6 +21,10 @@ const initialValues = {
   hireDate: new Date(),
   isPermanent: false,
 };
+const genderItems = [
+  { id: "male", title: "Male" },
+  { id: "female", title: "Female" },
+];
 
 const EmployeesForm = () => {
   const { values, setValues, handleInputChange } = useForm(initialValues);
@@ -42,30 +47,13 @@ const EmployeesForm = () => {
           />
         </Grid>
         <Grid item xs={6}>
-          <FormControl>
-            <FormLabel>Gender</FormLabel>
-            <RadioGroup
-              row
-              name="gender"
-              value={values.gender}
-              onChange={handleInputChange}
-            >
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel
-                value="female"
-                control={
-                  <Radio
-                    sx={{
-                      "&.Mui-checked": {
-                        color: pink[600],
-                      },
-                    }}
-                  />
-                }
-                label="Female"
-              />
-            </RadioGroup>
-          </FormControl>
+          <RadioGroupField
+            label="Gender"
+            name="gender"
+            value={values.gender}
+            onChange={handleInputChange}
+            items={genderItems}
+          />
         </Grid>
       </Grid>
     </Form>

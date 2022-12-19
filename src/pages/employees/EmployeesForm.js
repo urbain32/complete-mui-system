@@ -77,6 +77,14 @@ const EmployeesForm = () => {
             value={values.isPermanent}
             onChange={handleInputChange}
           />
+          <div>
+            <Controls.Button
+              variant="contained"
+              color="primary"
+              size="large"
+              text="Submit"
+            />
+          </div>
         </Grid>
       </Grid>
     </Form>

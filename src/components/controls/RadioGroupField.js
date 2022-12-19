@@ -11,7 +11,7 @@ import React from "react";
 export default function RadioGroupField(props) {
   const { name, label, value, onChange, items } = props;
   return (
-    <FormControl>
+    <FormControl sx={{ marginBottom: 1 }}>
       <FormLabel>{label}</FormLabel>
       <RadioGroup row name={name} value={value} onChange={onChange}>
         {items.map((item) => (

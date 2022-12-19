@@ -5,10 +5,10 @@ import {
   Grid,
   Radio,
   RadioGroup,
-  TextField,
 } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import { useForm, Form } from "../../components/useForm";
+import Input from "../../components/controls/Input";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -28,17 +28,13 @@ const EmployeesForm = () => {
     <Form>
       <Grid container spacing={4}>
         <Grid item xs={6}>
-          <TextField
-            fullWidth
-            variant="outlined"
+          <Input
             label="Full Name"
             name="fullName"
             value={values.fullName}
             onChange={handleInputChange}
           />
-          <TextField
-            fullWidth
-            variant="outlined"
+          <Input
             label="Email Address"
             name="email"
             value={values.email}

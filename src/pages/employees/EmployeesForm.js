@@ -53,6 +53,12 @@ const EmployeesForm = () => {
             onChange={handleInputChange}
             options={employeeService.getDepartementCollection()}
           />
+          <Controls.DatePicker
+            label="Hire Date"
+            name="hireDate"
+            value={values.hireDate}
+            onChange={handleInputChange}
+          />
           <Controls.CheckBox
             label="Permanent Employee"
             name="isPermanent"

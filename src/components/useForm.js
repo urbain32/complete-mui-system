@@ -1,6 +1,10 @@
+import { styled } from "@mui/material";
 import { useState } from "react";
-
-const useForm = (initialValues) => {
+const MyForm = styled("form")(({ theme }) => ({
+  with: "80%",
+  margin: theme.spacing(1), //spacing(1)=8px
+}));
+export function useForm(initialValues) {
   const [values, setValues] = useState(initialValues);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -14,6 +18,8 @@ const useForm = (initialValues) => {
     setValues,
     handleInputChange,
   };
-};
+}
 
-export default useForm;
+export function Form(props) {
+  return <MyForm>{props.children}</MyForm>;
+}

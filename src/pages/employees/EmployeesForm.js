@@ -19,10 +19,11 @@ const EmployeesForm = () => {
   const [values, setValues] = useState(initialValues);
   return (
     <MyForm>
-      <Grid container>
+      <Grid container sx={{}}>
         <Grid item xs={6}>
           <TextField
             fullWidth
+            sx={{ marginBottom: 2, gap: 2 }}
             variant="outlined"
             label="Full Name"
             value={values.fullName}

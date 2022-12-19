@@ -1,10 +1,5 @@
-import { Grid, styled, TextField } from "@mui/material";
-import React, { useState } from "react";
-import useForm from "../../components/useForm";
-const MyForm = styled("form")(({ theme }) => ({
-  with: "80%",
-  margin: theme.spacing(1), //spacing(1)=8px
-}));
+import { Grid, TextField } from "@mui/material";
+import { useForm, Form } from "../../components/useForm";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -19,7 +14,7 @@ const initialValues = {
 const EmployeesForm = () => {
   const { values, setValues, handleInputChange } = useForm(initialValues);
   return (
-    <MyForm>
+    <Form>
       <Grid container sx={{}}>
         <Grid item xs={6}>
           <TextField
@@ -42,7 +37,7 @@ const EmployeesForm = () => {
         </Grid>
         <Grid item xs={6}></Grid>
       </Grid>
-    </MyForm>
+    </Form>
   );
 };
 

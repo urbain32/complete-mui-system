@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import { useForm, Form } from "../../components/useForm";
-import Input from "../../components/controls/Input";
-import RadioGroupField from "../../components/controls/RadioGroupField";
+import Controls from "../../components/controls/Controls";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -25,13 +24,13 @@ const EmployeesForm = () => {
     <Form>
       <Grid container spacing={4}>
         <Grid item xs={6}>
-          <Input
+          <Controls.Input
             label="Full Name"
             name="fullName"
             value={values.fullName}
             onChange={handleInputChange}
           />
-          <Input
+          <Controls.Input
             label="Email Address"
             name="email"
             value={values.email}
@@ -39,7 +38,7 @@ const EmployeesForm = () => {
           />
         </Grid>
         <Grid item xs={6}>
-          <RadioGroupField
+          <Controls.RadioGroupField
             label="Gender"
             name="gender"
             value={values.gender}

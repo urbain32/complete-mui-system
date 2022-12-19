@@ -15,7 +15,7 @@ export default function CheckBox(props) {
     },
   });
   return (
-    <FormGroup>
+    <FormGroup sx={{ marginBottom: 1 }}>
       <FormControlLabel
         control={
           <MuiCheckBox

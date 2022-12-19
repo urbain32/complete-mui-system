@@ -7,6 +7,13 @@ import React from "react";
 
 export default function CheckBox(props) {
   const { name, label, value, onChange } = props;
+  //coz check box can't take the data of name,value we can create a func that we convert it
+  const converDefaultEventParams = (name, value) => ({
+    target: {
+      name,
+      value,
+    },
+  });
   return (
     <FormGroup>
       <FormControlLabel
@@ -15,7 +22,9 @@ export default function CheckBox(props) {
             name={name}
             color="primary"
             checked={value}
-            onChange={onChange}
+            onChange={(e) =>
+              onChange(converDefaultEventParams(name, e.target.checked))
+            }
           />
         }
         label={label}

@@ -28,8 +28,9 @@ const EmployeesForm = () => {
       temp.email = /$^|.+@.+..+/.test(values.email)
         ? ""
         : "Email is not valid.";
-    temp.mobile =
-      values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
+    if ("mobile" in fieldValues)
+      temp.mobile =
+        values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
     temp.departementId =
       values.departementId.length !== 0 ? "" : "This Field is required.";
     setErrors({ ...temp });

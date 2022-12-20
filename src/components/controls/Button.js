@@ -6,8 +6,8 @@ export default function Button(props) {
   return (
     <MuiButton
       variant={variant || "contained"}
-      size={size}
-      color={color}
+      size={size || "large"}
+      color={color || "primary"}
       onClick={onClick}
     >
       {text}

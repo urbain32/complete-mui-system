@@ -4,8 +4,13 @@ import React from "react";
 export default function Button(props) {
   const { text, size, color, variant, onClick } = props;
   return (
-    <Button size={size} color={color} variant={variant} onClick={onClick}>
+    <MuiButton
+      variant={variant || "contained"}
+      size={size}
+      color={color}
+      onClick={onClick}
+    >
       {text}
-    </Button>
+    </MuiButton>
   );
 }

@@ -29,11 +29,13 @@ const EmployeesForm = () => {
     temp.departementId =
       values.departementId.length !== 0 ? "" : "This Field is required.";
     setErrors({ ...temp });
+    return Object.values(temp).every((x) => x == "");
   };
   const { values, setValues, errors, setErrors, handleInputChange } =
     useForm(initialValues);
-  const handleSubmit = () => {
-    window.alert("testing ....");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) window.alert("testing ....");
   };
   return (
     <Form onSubmit={handleSubmit}>

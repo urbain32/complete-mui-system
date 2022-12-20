@@ -78,12 +78,7 @@ const EmployeesForm = () => {
             onChange={handleInputChange}
           />
           <div>
-            <Controls.Button
-              variant="contained"
-              color="primary"
-              size="large"
-              text="Submit"
-            />
+            <Controls.Button text="Submit" />
           </div>
         </Grid>
       </Grid>

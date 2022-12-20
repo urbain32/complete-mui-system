@@ -23,7 +23,7 @@ const EmployeesForm = () => {
   const validate = () => {
     let temp = {};
     temp.fullName = values.fullName ? "" : "This Field is required.";
-    temp.email = /$|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
+    temp.email = /$^|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
     temp.mobile =
       values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
     temp.departementId =

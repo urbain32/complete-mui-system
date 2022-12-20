@@ -20,7 +20,7 @@ const genderItems = [
 ];
 
 const EmployeesForm = () => {
-  const validate = () => {
+  const validate = (fieldValues = values) => {
     let temp = {};
     temp.fullName = values.fullName ? "" : "This Field is required.";
     temp.email = /$^|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
@@ -32,7 +32,7 @@ const EmployeesForm = () => {
     return Object.values(temp).every((x) => x == "");
   };
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
-    useForm(initialValues);
+    useForm(initialValues, true, validate);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) window.alert("testing ....");

@@ -4,7 +4,7 @@ const MyForm = styled("form")(({ theme }) => ({
   with: "80%",
   margin: theme.spacing(1), //spacing(1)=8px
 }));
-export function useForm(initialValues) {
+export function useForm(initialValues, validateOnChange = false, validate) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const handleInputChange = (e) => {
@@ -13,6 +13,7 @@ export function useForm(initialValues) {
       ...values,
       [name]: value,
     });
+    if (validateOnChange) validate({ [name]: value });
   };
   const resetForm = () => {
     setValues(initialValues);

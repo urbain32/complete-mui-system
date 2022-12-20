@@ -23,6 +23,7 @@ const EmployeesForm = () => {
   const validate = () => {
     let temp = {};
     temp.fullName = values.fullName ? "" : "This Field is required.";
+    temp.email = /$|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
   };
   const { values, setValues, handleInputChange } = useForm(initialValues);
   return (

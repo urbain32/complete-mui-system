@@ -24,5 +24,10 @@ export function useForm(initialValues) {
 }
 
 export function Form(props) {
-  return <MyForm autoComplete="off">{props.children}</MyForm>;
+  const { children, ...other } = props;
+  return (
+    <MyForm autoComplete="off" {...other}>
+      {props.children}
+    </MyForm>
+  );
 }

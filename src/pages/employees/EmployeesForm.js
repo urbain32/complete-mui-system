@@ -21,8 +21,8 @@ const genderItems = [
 
 const EmployeesForm = () => {
   const validate = (fieldValues = values) => {
-    let temp = {};
-    if ("fullNamme" in fieldValues)
+    let temp = { ...errors };
+    if ("fullName" in fieldValues)
       temp.fullName = values.fullName ? "" : "This Field is required.";
     if ("email" in fieldValues)
       temp.email = /$^|.+@.+..+/.test(values.email)
@@ -31,11 +31,12 @@ const EmployeesForm = () => {
     if ("mobile" in fieldValues)
       temp.mobile =
         values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
-    if ("departement" in fieldValues)
+    if ("departementId" in fieldValues)
       temp.departementId =
         values.departementId.length !== 0 ? "" : "This Field is required.";
     setErrors({ ...temp });
-    return Object.values(temp).every((x) => x === "");
+    if (fieldValues === values)
+      return Object.values(temp).every((x) => x === "");
   };
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
     useForm(initialValues, true, validate);

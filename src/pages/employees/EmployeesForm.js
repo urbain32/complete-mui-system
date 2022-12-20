@@ -35,7 +35,7 @@ const EmployeesForm = () => {
       temp.departementId =
         values.departementId.length !== 0 ? "" : "This Field is required.";
     setErrors({ ...temp });
-    return Object.values(temp).every((x) => x == "");
+    return Object.values(temp).every((x) => x === "");
   };
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
     useForm(initialValues, true, validate);

@@ -27,11 +27,16 @@ const EmployeesForm = () => {
     temp.mobile =
       values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
     temp.departementId =
-      values.departementId.length != 0 ? "" : "This Field is required.";
+      values.departementId.length !== 0 ? "" : "This Field is required.";
+    setErrors({ ...temp });
   };
-  const { values, setValues, handleInputChange } = useForm(initialValues);
+  const { values, setValues, errors, setErrors, handleInputChange } =
+    useForm(initialValues);
+  const handleSubmit = () => {
+    window.alert("testing ....");
+  };
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Grid container spacing={8}>
         <Grid item xs={12} lg={6}>
           <Controls.Input

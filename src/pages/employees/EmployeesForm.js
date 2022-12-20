@@ -31,8 +31,9 @@ const EmployeesForm = () => {
     if ("mobile" in fieldValues)
       temp.mobile =
         values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
-    temp.departementId =
-      values.departementId.length !== 0 ? "" : "This Field is required.";
+    if ("departement" in fieldValues)
+      temp.departementId =
+        values.departementId.length !== 0 ? "" : "This Field is required.";
     setErrors({ ...temp });
     return Object.values(temp).every((x) => x == "");
   };

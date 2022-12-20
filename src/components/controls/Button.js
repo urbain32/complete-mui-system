@@ -2,6 +2,7 @@ import { Button as Buttom, styled } from "@mui/material";
 import React from "react";
 const MuiButton = styled(Buttom)((theme) => ({
   marginRight: 8,
+  textTransform: "none",
 }));
 
 export default function Button(props) {

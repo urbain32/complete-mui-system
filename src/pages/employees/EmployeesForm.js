@@ -31,7 +31,7 @@ const EmployeesForm = () => {
     setErrors({ ...temp });
     return Object.values(temp).every((x) => x == "");
   };
-  const { values, setValues, errors, setErrors, handleInputChange } =
+  const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
     useForm(initialValues);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -104,6 +104,7 @@ const EmployeesForm = () => {
               color="info"
               startIcon={<Cached />}
               text="Reset"
+              onClick={resetForm}
             />
           </div>
         </Grid>

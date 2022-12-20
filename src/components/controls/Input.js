@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import React from "react";
 
 export default function Input(props) {
-  const { name, label, value, onChange } = props;
+  const { name, label, value, onChange, error = null } = props;
   return (
     <TextField
       fullWidth
@@ -12,8 +12,7 @@ export default function Input(props) {
       name={name}
       value={value}
       onChange={onChange}
-      error
-      helperText="some error"
+      {...(error && { error: true, helperText: error })}
     />
   );
 }

@@ -20,8 +20,11 @@ const genderItems = [
 ];
 
 const EmployeesForm = () => {
+  const validate = () => {
+    let temp = {};
+    temp.fullName = values.fullName ? "" : "This Field is required.";
+  };
   const { values, setValues, handleInputChange } = useForm(initialValues);
-  console.log("first", values);
   return (
     <Form>
       <Grid container spacing={8}>

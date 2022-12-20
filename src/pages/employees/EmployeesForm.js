@@ -24,6 +24,8 @@ const EmployeesForm = () => {
     let temp = {};
     temp.fullName = values.fullName ? "" : "This Field is required.";
     temp.email = /$|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
+    temp.mobile =
+      values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
   };
   const { values, setValues, handleInputChange } = useForm(initialValues);
   return (

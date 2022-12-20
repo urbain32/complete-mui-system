@@ -46,18 +46,21 @@ const EmployeesForm = () => {
             name="fullName"
             value={values.fullName}
             onChange={handleInputChange}
+            error={errors.fullName}
           />
           <Controls.Input
             label="Email Address"
             name="email"
             value={values.email}
             onChange={handleInputChange}
+            error={errors.email}
           />
           <Controls.Input
             label="Mobile"
             name="mobile"
             value={values.mobile}
             onChange={handleInputChange}
+            error={errors.mobile}
           />
           <Controls.Input
             label="City"
@@ -80,6 +83,7 @@ const EmployeesForm = () => {
             value={values.departementId}
             onChange={handleInputChange}
             options={employeeService.getDepartementCollection()}
+            error={errors.departementId}
           />
           <Controls.DatePicker
             label="Hire Date"

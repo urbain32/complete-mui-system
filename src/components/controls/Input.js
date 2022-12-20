@@ -6,12 +6,14 @@ export default function Input(props) {
   return (
     <TextField
       fullWidth
+      sx={{ marginBottom: 1 }}
       variant="outlined"
       label={label}
       name={name}
       value={value}
       onChange={onChange}
-      sx={{ marginBottom: 1 }}
+      error
+      helperText="some error"
     />
   );
 }

@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { useForm, Form } from "../../components/useForm";
 import Controls from "../../components/controls/Controls";
 import * as employeeService from "../../services/employeeService";
+import { Cached } from "@mui/icons-material";
 const initialValues = {
   id: 0,
   fullName: "",
@@ -24,7 +25,7 @@ const EmployeesForm = () => {
   return (
     <Form>
       <Grid container spacing={8}>
-        <Grid item xs={6}>
+        <Grid item xs={12} lg={6}>
           <Controls.Input
             label="Full Name"
             name="fullName"
@@ -50,7 +51,7 @@ const EmployeesForm = () => {
             onChange={handleInputChange}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} lg={6}>
           <Controls.RadioGroupField
             label="Gender"
             name="gender"
@@ -78,7 +79,13 @@ const EmployeesForm = () => {
             onChange={handleInputChange}
           />
           <div>
-            <Controls.Button text="Submit" />
+            <Controls.Button type="submit" text="Submit" />
+            <Controls.Button
+              variant="outlined"
+              color="info"
+              startIcon={<Cached />}
+              text="Reset"
+            />
           </div>
         </Grid>
       </Grid>

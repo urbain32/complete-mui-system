@@ -22,7 +22,8 @@ const genderItems = [
 const EmployeesForm = () => {
   const validate = (fieldValues = values) => {
     let temp = {};
-    temp.fullName = values.fullName ? "" : "This Field is required.";
+    if ("fullNamme" in fieldValues)
+      temp.fullName = values.fullName ? "" : "This Field is required.";
     temp.email = /$^|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
     temp.mobile =
       values.mobile.length > 9 ? "" : "Minimum 10 number is required ";

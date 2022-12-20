@@ -24,7 +24,10 @@ const EmployeesForm = () => {
     let temp = {};
     if ("fullNamme" in fieldValues)
       temp.fullName = values.fullName ? "" : "This Field is required.";
-    temp.email = /$^|.+@.+..+/.test(values.email) ? "" : "Email is not valid.";
+    if ("email" in fieldValues)
+      temp.email = /$^|.+@.+..+/.test(values.email)
+        ? ""
+        : "Email is not valid.";
     temp.mobile =
       values.mobile.length > 9 ? "" : "Minimum 10 number is required ";
     temp.departementId =

@@ -5,4 +5,6 @@ export const getDepartementCollection = () => [
   { id: 4, title: "HR" },
 ];
 
-export function insertEmployees(data) {}
+export function insertEmployees(data) {
+  localStorage.setItem("employees", JSON.stringify(data));
+}

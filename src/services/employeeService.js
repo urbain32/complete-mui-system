@@ -11,7 +11,10 @@ export const getDepartementCollection = () => [
 ];
 
 export function insertEmployees(data) {
-  localStorage.setItem(KEYS.employees, JSON.stringify(data));
+  let employees = getAllEmployees();
+  data["id"] = generateEmployeesId();
+  employees.push(data);
+  localStorage.setItem(KEYS.employees, JSON.stringify(employees));
 }
 
 export function getAllEmployees() {

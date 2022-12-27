@@ -4,3 +4,5 @@ export const getDepartementCollection = () => [
   { id: 3, title: "Accounting" },
   { id: 4, title: "HR" },
 ];
+
+export function insertEmployees(data) {}

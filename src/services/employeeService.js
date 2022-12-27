@@ -1,3 +1,7 @@
+const KEYS = {
+  employees: "employees",
+};
+
 export const getDepartementCollection = () => [
   { id: 1, title: "Development" },
   { id: 2, title: "Marketing" },
@@ -6,5 +10,5 @@ export const getDepartementCollection = () => [
 ];
 
 export function insertEmployees(data) {
-  localStorage.setItem("employees", JSON.stringify(data));
+  localStorage.setItem(KEYS.employees, JSON.stringify(data));
 }

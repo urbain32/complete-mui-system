@@ -40,9 +40,10 @@ const EmployeesForm = () => {
   };
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
     useForm(initialValues, true, validate);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) window.alert("testing ....");
+    if (validate()) employeeService.insertEmployees(values);
   };
   return (
     <Form onSubmit={handleSubmit}>

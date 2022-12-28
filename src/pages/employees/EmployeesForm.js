@@ -44,6 +44,7 @@ const EmployeesForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) employeeService.insertEmployees(values);
+    resetForm();
   };
   return (
     <Form onSubmit={handleSubmit}>

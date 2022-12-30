@@ -17,7 +17,7 @@ const headCells = [
 ];
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
-  const { TblContainer } = useTable(records, headCells);
+  const { TblContainer, TblHead } = useTable(records, headCells);
   return (
     <>
       <PageHeader
@@ -27,6 +27,7 @@ const Employees = () => {
       />
       <MyPaper square>
         <TblContainer>
+          <TblHead />
           <TableBody>
             {records.map((record) => (
               <TableRow key={record.id}>

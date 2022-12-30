@@ -1,5 +1,5 @@
 import { PeopleOutlineTwoTone } from "@mui/icons-material";
-import { Paper, styled, TableBody } from "@mui/material";
+import { Paper, styled, TableBody, TableCell, TableRow } from "@mui/material";
 import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
@@ -12,6 +12,7 @@ const MyPaper = styled(Paper)((theme) => ({
 }));
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
+  console.log("re--", records);
   const { TblContainer } = useTable();
   return (
     <>
@@ -21,9 +22,17 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
-        {/* <EmployeesForm /> */}
+        <EmployeesForm />
         <TblContainer>
-          <TableBody></TableBody>
+          <TableBody>
+            {records.map((record) => (
+              <TableRow key={record.id}>
+                <TableCell>{record.fullName}</TableCell>
+                <TableCell>{record.email}</TableCell>
+                <TableCell>{record.mobile}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
         </TblContainer>
       </MyPaper>
     </>

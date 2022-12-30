@@ -1,5 +1,5 @@
 import { PeopleOutlineTwoTone } from "@mui/icons-material";
-import { Paper, styled } from "@mui/material";
+import { Paper, styled, TableBody } from "@mui/material";
 import React from "react";
 import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
@@ -19,7 +19,9 @@ const Employees = () => {
       />
       <MyPaper square>
         {/* <EmployeesForm /> */}
-        <TblContainer></TblContainer>
+        <TblContainer>
+          <TableBody></TableBody>
+        </TblContainer>
       </MyPaper>
     </>
   );

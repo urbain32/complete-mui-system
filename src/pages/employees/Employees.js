@@ -1,14 +1,17 @@
 import { PeopleOutlineTwoTone } from "@mui/icons-material";
 import { Paper, styled, TableBody } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
 import EmployeesForm from "./EmployeesForm";
+import * as employeeService from "../../services/employeeService";
+
 const MyPaper = styled(Paper)((theme) => ({
   margin: "40px",
   padding: "18px",
 }));
 const Employees = () => {
+  const [records, setRecords] = useState(employeeService.getAllEmployees());
   const { TblContainer } = useTable();
   return (
     <>

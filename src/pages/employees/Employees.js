@@ -9,10 +9,15 @@ const MyPaper = styled(Paper)((theme) => ({
   margin: "40px",
   padding: "18px",
 }));
+const headCells = [
+  { id: "fullName", label: "Employee Name" },
+  { id: "email", label: "Employee address (Personal)" },
+  { id: "mobile", label: "Mobile Number" },
+  { id: "departement", label: "Departement" },
+];
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
-  console.log("re--", records);
-  const { TblContainer } = useTable();
+  const { TblContainer } = useTable(records, headCells);
   return (
     <>
       <PageHeader

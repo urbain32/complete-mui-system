@@ -3,7 +3,6 @@ import { Paper, styled, TableBody, TableCell, TableRow } from "@mui/material";
 import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
-import EmployeesForm from "./EmployeesForm";
 import * as employeeService from "../../services/employeeService";
 
 const MyPaper = styled(Paper)((theme) => ({
@@ -22,7 +21,6 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
-        <EmployeesForm />
         <TblContainer>
           <TableBody>
             {records.map((record) => (

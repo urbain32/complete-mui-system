@@ -30,6 +30,7 @@ const Employees = () => {
                 <TableCell>{record.fullName}</TableCell>
                 <TableCell>{record.email}</TableCell>
                 <TableCell>{record.mobile}</TableCell>
+                <TableCell>{record.departement}</TableCell>
               </TableRow>
             ))}
           </TableBody>

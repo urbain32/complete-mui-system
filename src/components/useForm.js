@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import { useState } from "react";
 const MyForm = styled("form")(({ theme }) => ({
-  with: "80%",
+  width: "80%",
   margin: theme.spacing(1), //spacing(1)=8px
 }));
 export function useForm(initialValues, validateOnChange = false, validate) {

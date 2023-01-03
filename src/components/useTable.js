@@ -42,8 +42,11 @@ export default function useTable(records, headCells, theme) {
     );
   };
   // func for pagination
-  const handleChangePage = (event, newValue) => {
+  const handleChangePage = (event, newPage) => {
     setPage(newPage);
+  };
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value));
   };
   const TblPagination = () => (
     <TablePagination
@@ -53,6 +56,7 @@ export default function useTable(records, headCells, theme) {
       rowsPerPage={rowsPerPage}
       count={records.length}
       onPageChange={handleChangePage}
+      onRowsPerPageChange={handleChangeRowsPerPage}
     />
   );
 

@@ -42,13 +42,17 @@ export default function useTable(records, headCells, theme) {
     );
   };
   // func for pagination
+  const handleChangePage = (event, newValue) => {
+    setPage(newPage);
+  };
   const TblPagination = () => (
     <TablePagination
       component="div"
       page={page}
-      rowsPerPage={rowsPerPage}
       rowsPerPageOptions={pages}
+      rowsPerPage={rowsPerPage}
       count={records.length}
+      onPageChange={handleChangePage}
     />
   );
 

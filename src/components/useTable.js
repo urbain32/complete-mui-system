@@ -1,4 +1,11 @@
-import { styled, Table, TableCell, TableHead, TableRow } from "@mui/material";
+import {
+  styled,
+  Table,
+  TableCell,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from "@mui/material";
 import React, { useState } from "react";
 const MyTable = styled(Table)(({ theme }) => ({
   margin: theme.spacing(3), //spacing(1)=8px
@@ -34,6 +41,16 @@ export default function useTable(records, headCells, theme) {
       </TableHead>
     );
   };
+  // func for pagination
+  const TblPagination = () => (
+    <TablePagination
+      component="div"
+      page={page}
+      rowsPerPage={rowsPerPage}
+      rowsPerPageOptions={pages}
+      count={records.length}
+    />
+  );
 
   // returning all the func in useTable
 

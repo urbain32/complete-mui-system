@@ -1,5 +1,5 @@
 import { styled, Table, TableCell, TableHead, TableRow } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 const MyTable = styled(Table)(({ theme }) => ({
   margin: theme.spacing(3), //spacing(1)=8px
   "& thead th": {
@@ -17,6 +17,9 @@ const MyTable = styled(Table)(({ theme }) => ({
 }));
 
 export default function useTable(records, headCells, theme) {
+  const pages = [5, 10, 20];
+  const [page, setPage] = useState();
+  const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
   const TblContainer = (props) => <MyTable>{props.children}</MyTable>;
   const TblHead = (props) => {
     return (

@@ -54,5 +54,5 @@ export default function useTable(records, headCells, theme) {
 
   // returning all the func in useTable
 
-  return { TblContainer, TblHead };
+  return { TblContainer, TblHead, TblPagination };
 }

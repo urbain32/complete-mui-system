@@ -17,7 +17,7 @@ const headCells = [
 ];
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
-  const { TblContainer, TblHead } = useTable(records, headCells);
+  const { TblContainer, TblHead, TblPagination } = useTable(records, headCells);
   return (
     <>
       <PageHeader
@@ -39,6 +39,7 @@ const Employees = () => {
             ))}
           </TableBody>
         </TblContainer>
+        <TblPagination />
       </MyPaper>
     </>
   );

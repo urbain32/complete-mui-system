@@ -20,7 +20,9 @@ export default function useTable(records, headCells, theme) {
   const pages = [5, 10, 20];
   const [page, setPage] = useState();
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
+  // func for table container
   const TblContainer = (props) => <MyTable>{props.children}</MyTable>;
+  // func for table head
   const TblHead = (props) => {
     return (
       <TableHead sx={{ fontWeight: "600" }}>
@@ -32,5 +34,8 @@ export default function useTable(records, headCells, theme) {
       </TableHead>
     );
   };
+
+  // returning all the func in useTable
+
   return { TblContainer, TblHead };
 }

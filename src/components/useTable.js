@@ -24,7 +24,7 @@ const MyTable = styled(Table)(({ theme }) => ({
 }));
 
 export default function useTable(records, headCells, theme) {
-  const pages = [5, 10, 20];
+  const pages = [5, 10, 25];
   const [page, setPage] = useState();
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
   // func for table container
@@ -46,7 +46,8 @@ export default function useTable(records, headCells, theme) {
     setPage(newPage);
   };
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value));
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
   };
   const TblPagination = () => (
     <TablePagination

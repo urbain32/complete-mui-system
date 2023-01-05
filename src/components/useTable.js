@@ -60,7 +60,10 @@ export default function useTable(records, headCells, theme) {
       onRowsPerPageChange={handleChangeRowsPerPage}
     />
   );
-
+  // creating a function to record per page
+  const recordsAfterPagingAndSorting = () => {
+    return records.slice(page * rowsPerPage, (page + 1) * rowsPerPage);
+  };
   // returning all the func in useTable
 
   return { TblContainer, TblHead, TblPagination };

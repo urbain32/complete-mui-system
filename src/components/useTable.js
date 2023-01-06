@@ -78,6 +78,16 @@ export default function useTable(records, headCells, theme) {
       onRowsPerPageChange={handleChangeRowsPerPage}
     />
   );
+  // func for sorting
+  function sort(array, comparator) {
+    const stablizedThis = array.map((el, index) => [el, index]);
+    stablizedThis.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stablizedThis.map((el) => el[0]);
+  }
   // creating a function to record per page
   const recordsAfterPagingAndSorting = () => {
     return records.slice(page * rowsPerPage, (page + 1) * rowsPerPage);

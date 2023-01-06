@@ -34,12 +34,19 @@ export default function useTable(records, headCells, theme) {
   const TblContainer = (props) => <MyTable>{props.children}</MyTable>;
   // func for table head
   const TblHead = (props) => {
+    const handleSort = (cellId) => {};
     return (
       <TableHead sx={{ fontWeight: "600" }}>
         <TableRow>
           {headCells.map((headCell) => (
             <TableCell key={headCell.id}>
-              <TableSortLabel>{headCell.label}</TableSortLabel>
+              <TableSortLabel
+                onClick={() => {
+                  handleSort(headCell.id);
+                }}
+              >
+                {headCell.label}
+              </TableSortLabel>
             </TableCell>
           ))}
         </TableRow>

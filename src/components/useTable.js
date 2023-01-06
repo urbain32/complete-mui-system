@@ -79,7 +79,7 @@ export default function useTable(records, headCells, theme) {
     />
   );
   // func for sorting
-  function sort(array, comparator) {
+  function stableSort(array, comparator) {
     const stablizedThis = array.map((el, index) => [el, index]);
     stablizedThis.sort((a, b) => {
       const order = comparator(a[0], b[0]);
@@ -90,7 +90,10 @@ export default function useTable(records, headCells, theme) {
   }
   // creating a function to record per page
   const recordsAfterPagingAndSorting = () => {
-    return records.slice(page * rowsPerPage, (page + 1) * rowsPerPage);
+    return stableSort(records.getComparator(order, orderBy)).slice(
+      page * rowsPerPage,
+      (page + 1) * rowsPerPage
+    );
   };
   // returning all the func in useTable
 

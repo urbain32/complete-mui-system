@@ -27,6 +27,8 @@ export default function useTable(records, headCells, theme) {
   const pages = [5, 10, 25];
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
+  const [order, setOrder] = useState();
+  const [orderBy, setOrderBy] = useState();
   // func for table container
   const TblContainer = (props) => <MyTable>{props.children}</MyTable>;
   // func for table head

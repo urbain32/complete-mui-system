@@ -5,6 +5,7 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  TableSortLabel,
 } from "@mui/material";
 import React, { useState } from "react";
 const MyTable = styled(Table)(({ theme }) => ({
@@ -37,7 +38,9 @@ export default function useTable(records, headCells, theme) {
       <TableHead sx={{ fontWeight: "600" }}>
         <TableRow>
           {headCells.map((headCell) => (
-            <TableCell key={headCell.id}>{headCell.label}</TableCell>
+            <TableCell key={headCell.id}>
+              <TableSortLabel>{headCell.label}</TableSortLabel>
+            </TableCell>
           ))}
         </TableRow>
       </TableHead>

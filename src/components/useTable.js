@@ -34,7 +34,11 @@ export default function useTable(records, headCells, theme) {
   const TblContainer = (props) => <MyTable>{props.children}</MyTable>;
   // func for table head
   const TblHead = (props) => {
-    const handleSort = (cellId) => {};
+    const handleSort = (cellId) => {
+      const isAsc = orderBy === cellId && order === "asc";
+      setOrder(isAsc ? "desc" : "asc");
+      setOrderBy(cellId);
+    };
     return (
       <TableHead sx={{ fontWeight: "600" }}>
         <TableRow>

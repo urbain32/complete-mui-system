@@ -88,6 +88,22 @@ export default function useTable(records, headCells, theme) {
     });
     return stablizedThis.map((el) => el[0]);
   }
+  // get comparator function
+  function getComparator(order, orderBy) {
+    return order === "desc"
+      ? (a, b) => descendingComparator(a, b, orderBy)
+      : (a, b) => -descendingComparator(a, b, orderBy);
+  }
+
+  function descendingComparator(a, b, orderBy) {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  }
   // creating a function to record per page
   const recordsAfterPagingAndSorting = () => {
     return stableSort(records.getComparator(order, orderBy)).slice(

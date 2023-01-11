@@ -106,7 +106,7 @@ export default function useTable(records, headCells, theme) {
   }
   // creating a function to record per page
   const recordsAfterPagingAndSorting = () => {
-    return stableSort(records.getComparator(order, orderBy)).slice(
+    return stableSort(records, getComparator(order, orderBy)).slice(
       page * rowsPerPage,
       (page + 1) * rowsPerPage
     );

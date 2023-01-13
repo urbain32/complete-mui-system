@@ -13,7 +13,7 @@ const headCells = [
   { id: "fullName", label: "Employee Name" },
   { id: "email", label: "Employee address (Personal)" },
   { id: "mobile", label: "Mobile Number" },
-  { id: "departement", label: "Departement" },
+  { id: "departement", label: "Departement", disableSorting: true },
 ];
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());

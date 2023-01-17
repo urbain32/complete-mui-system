@@ -1,9 +1,17 @@
 import { PeopleOutlineTwoTone } from "@mui/icons-material";
-import { Paper, styled, TableBody, TableCell, TableRow } from "@mui/material";
+import {
+  Paper,
+  styled,
+  TableBody,
+  TableCell,
+  TableRow,
+  Toolbar,
+} from "@mui/material";
 import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
 import * as employeeService from "../../services/employeeService";
+import Controls from "../../components/controls/Controls";
 
 const MyPaper = styled(Paper)((theme) => ({
   margin: "40px",
@@ -27,6 +35,7 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
+        <Toolbar></Toolbar>
         <TblContainer>
           <TblHead />
           <TableBody>

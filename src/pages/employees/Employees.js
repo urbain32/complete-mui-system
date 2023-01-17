@@ -13,7 +13,7 @@ import PageHeader from "../../components/PageHeader";
 import useTable from "../../components/useTable";
 import * as employeeService from "../../services/employeeService";
 import Controls from "../../components/controls/Controls";
-
+import EmployeesForm from "../../pages/employees/EmployeesForm";
 const MyPaper = styled(Paper)((theme) => ({
   margin: "40px",
   padding: "18px",
@@ -36,17 +36,20 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
+        {/* <EmployeesForm /> */}
         <Toolbar>
-          <Controls.Input
-            label="Search Employee"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
-          />
+          <div style={{ width: "75%" }}>
+            <Controls.Input
+              label="Search Employee"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </div>
         </Toolbar>
         <TblContainer>
           <TblHead />

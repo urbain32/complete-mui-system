@@ -35,7 +35,9 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
-        <Toolbar></Toolbar>
+        <Toolbar>
+          <Controls.Input label="Search Employee" />
+        </Toolbar>
         <TblContainer>
           <TblHead />
           <TableBody>

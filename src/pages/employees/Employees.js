@@ -1,5 +1,6 @@
-import { PeopleOutlineTwoTone } from "@mui/icons-material";
+import { PeopleOutlineTwoTone, Search } from "@mui/icons-material";
 import {
+  InputAdornment,
   Paper,
   styled,
   TableBody,
@@ -36,7 +37,16 @@ const Employees = () => {
       />
       <MyPaper square>
         <Toolbar>
-          <Controls.Input label="Search Employee" />
+          <Controls.Input
+            label="Search Employee"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Search />
+                </InputAdornment>
+              ),
+            }}
+          />
         </Toolbar>
         <TblContainer>
           <TblHead />

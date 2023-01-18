@@ -26,21 +26,26 @@ const headCells = [
 ];
 const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
-  const [filterFn, setFilterFn] = useState();
+  const [filterFn, setFilterFn] = useState({
+    fn: (items) => {
+      return items;
+    },
+  });
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
     useTable(records, headCells, filterFn);
-  const handleSearch = (e) => {
-    let target = e.target;
-    setFilterFn({
-      fn: (items) => {
-        if (target.values === "") {
-          return items;
-        } else {
-          return items.filter((x) => x.fullName.inclues(target.value));
-        }
-      },
-    });
-  };
+  // const handleSearch = (e) => {
+  //   let target = e.target;
+  //   setFilterFn({
+  //     fn: (items) => {
+  //       if (e.target.value == "") return items;
+  //       else
+  //         return items.filter((x) =>
+  //           x.fullName.toLowerCase().includes(e.target.value)
+  //         );
+  //     },
+  //   });
+  // };
+
   return (
     <>
       <PageHeader
@@ -61,19 +66,19 @@ const Employees = () => {
                   </InputAdornment>
                 ),
               }}
-              onChange={handleSearch()}
+              // onChange={handleSearch}
             />
           </div>
         </Toolbar>
         <TblContainer>
           <TblHead />
           <TableBody>
-            {recordsAfterPagingAndSorting().map((record) => (
-              <TableRow key={record.id}>
-                <TableCell>{record.fullName}</TableCell>
-                <TableCell>{record.email}</TableCell>
-                <TableCell>{record.mobile}</TableCell>
-                <TableCell>{record.departement}</TableCell>
+            {recordsAfterPagingAndSorting().map((item) => (
+              <TableRow key={item.id}>
+                <TableCell>{item.fullName}</TableCell>
+                <TableCell>{item.email}</TableCell>
+                <TableCell>{item.mobile}</TableCell>
+                <TableCell>{item.departement}</TableCell>
               </TableRow>
             ))}
           </TableBody>

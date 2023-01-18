@@ -28,6 +28,9 @@ const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
     useTable(records, headCells);
+  const handleSearch = (e) => {
+    let target = e.target;
+  };
   return (
     <>
       <PageHeader
@@ -48,6 +51,7 @@ const Employees = () => {
                   </InputAdornment>
                 ),
               }}
+              onChange={handleSearch()}
             />
           </div>
         </Toolbar>

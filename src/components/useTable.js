@@ -24,7 +24,7 @@ const MyTable = styled(Table)(({ theme }) => ({
   },
 }));
 
-export default function useTable(records, headCells, theme) {
+export default function useTable(records, headCells, theme, filterFn) {
   const pages = [5, 10, 25];
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);

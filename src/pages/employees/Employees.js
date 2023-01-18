@@ -28,7 +28,7 @@ const Employees = () => {
   const [records, setRecords] = useState(employeeService.getAllEmployees());
   const [filterFn, setFilterFn] = useState();
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
-    useTable(records, headCells);
+    useTable(records, headCells, filterFn);
   const handleSearch = (e) => {
     let target = e.target;
     setFilterFn({

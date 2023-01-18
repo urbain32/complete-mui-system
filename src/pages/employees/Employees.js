@@ -31,6 +31,15 @@ const Employees = () => {
     useTable(records, headCells);
   const handleSearch = (e) => {
     let target = e.target;
+    setFilterFn({
+      fn: (items) => {
+        if (target.values === "") {
+          return items;
+        } else {
+          return items.filter((x) => x.fullName.inclues(target.value));
+        }
+      },
+    });
   };
   return (
     <>

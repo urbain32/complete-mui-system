@@ -33,18 +33,18 @@ const Employees = () => {
   });
   const { TblContainer, TblHead, TblPagination, recordsAfterPagingAndSorting } =
     useTable(records, headCells, filterFn);
-  // const handleSearch = (e) => {
-  //   let target = e.target;
-  //   setFilterFn({
-  //     fn: (items) => {
-  //       if (e.target.value == "") return items;
-  //       else
-  //         return items.filter((x) =>
-  //           x.fullName.toLowerCase().includes(e.target.value)
-  //         );
-  //     },
-  //   });
-  // };
+  const handleSearch = (e) => {
+    let target = e.target;
+    setFilterFn({
+      fn: (items) => {
+        if (target.value === "") return items;
+        else
+          return items.filter((x) =>
+            x.fullName.toLowerCase().includes(target.value)
+          );
+      },
+    });
+  };
 
   return (
     <>
@@ -66,7 +66,7 @@ const Employees = () => {
                   </InputAdornment>
                 ),
               }}
-              // onChange={handleSearch}
+              onChange={handleSearch}
             />
           </div>
         </Toolbar>

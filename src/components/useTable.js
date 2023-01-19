@@ -24,7 +24,7 @@ const MyTable = styled(Table)(({ theme }) => ({
   },
 }));
 
-export default function useTable(records, headCells, theme, filterFn) {
+export default function useTable(records, headCells, filterFn) {
   const pages = [5, 10, 25];
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(pages[page]);
@@ -113,15 +113,10 @@ export default function useTable(records, headCells, theme, filterFn) {
   }
   // creating a function to record per page
   const recordsAfterPagingAndSorting = () => {
-    return stableSort(records, getComparator(order, orderBy)).slice(
-      page * rowsPerPage,
-      (page + 1) * rowsPerPage
-    );
-
-    // return stableSort(
-    //   filterFn.fn(records),
-    //   getComparator(order, orderBy)
-    // ).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
+    return stableSort(
+      filterFn.fn(records),
+      getComparator(order, orderBy)
+    ).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
   };
   // returning all the func in useTable
 

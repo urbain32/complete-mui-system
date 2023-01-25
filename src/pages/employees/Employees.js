@@ -54,7 +54,7 @@ const Employees = () => {
         icon={<PeopleOutlineTwoTone fontSize="large" />}
       />
       <MyPaper square>
-        {/* <EmployeesForm /> */}
+        <EmployeesForm />
         <Toolbar>
           <div style={{ width: "75%" }}>
             <Controls.Input

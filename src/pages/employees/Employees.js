@@ -1,4 +1,4 @@
-import { PeopleOutlineTwoTone, Search } from "@mui/icons-material";
+import { Add, PeopleOutlineTwoTone, Search } from "@mui/icons-material";
 import {
   InputAdornment,
   Paper,
@@ -67,6 +67,13 @@ const Employees = () => {
                 ),
               }}
               onChange={handleSearch}
+            />
+          </div>
+          <div style={{ position: "absolute", right: "10px" }}>
+            <Controls.Button
+              text="Add New"
+              variant="outlined"
+              startIcon={<Add />}
             />
           </div>
         </Toolbar>

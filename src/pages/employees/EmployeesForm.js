@@ -66,6 +66,7 @@ const EmployeesForm = () => {
           />
           <Controls.Input
             label="Mobile"
+            type="number"
             name="mobile"
             value={values.mobile}
             onChange={handleInputChange}
